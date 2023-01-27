@@ -7,6 +7,7 @@ public abstract class BrowserAbstract {
     protected DesiredCapabilities capabilities = new DesiredCapabilities();
 
     public abstract void setOptions();
+
     public abstract BrowserDriver create();
 
     public BrowserDriver getInstance() {
