@@ -1,10 +1,10 @@
-package webdriver.core.browsers;
+package pl.marcin.webdriver.core.browsers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import webdriver.core.BrowserAbstract;
-import webdriver.core.drivers.BrowserDriver;
+import pl.marcin.webdriver.core.BrowserAbstract;
+import pl.marcin.webdriver.core.drivers.browserdriver.BrowserDriver;
 
 public class FirefoxBrowser extends BrowserAbstract {
     private final FirefoxOptions firefoxOptions = new FirefoxOptions();

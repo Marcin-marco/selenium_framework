@@ -1,10 +1,8 @@
-package webdriver.core;
+package pl.marcin.webdriver.core;
 
-import org.openqa.selenium.remote.DesiredCapabilities;
-import webdriver.core.drivers.BrowserDriver;
+import pl.marcin.webdriver.core.drivers.browserdriver.BrowserDriver;
 
 public abstract class BrowserAbstract {
-    protected DesiredCapabilities capabilities = new DesiredCapabilities();
 
     public abstract void setOptions();
 

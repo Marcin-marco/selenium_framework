@@ -1,9 +1,9 @@
-package webdriver.core;
+package pl.marcin.webdriver.core;
 
-import webdriver.configuration.Configuration;
-import webdriver.core.browsers.ChromeBrowser;
-import webdriver.core.browsers.FirefoxBrowser;
-import webdriver.core.drivers.BrowserDriver;
+import pl.marcin.webdriver.configuration.Configuration;
+import pl.marcin.webdriver.core.browsers.ChromeBrowser;
+import pl.marcin.webdriver.core.browsers.FirefoxBrowser;
+import pl.marcin.webdriver.core.drivers.browserdriver.BrowserDriver;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
