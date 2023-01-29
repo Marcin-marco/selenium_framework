@@ -8,10 +8,12 @@ import lombok.NoArgsConstructor;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(NON_NULL)
 public class Environment {
     private String name;
     private String protocol;
