@@ -1,0 +1,10 @@
+{
+  "environments": [
+    {
+      "name": "TST",
+      "protocol": "https",
+      "host": "automationexercise.com",
+      "port": "443"
+    }
+  ]
+}
