@@ -14,5 +14,5 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @AllArgsConstructor
 @JsonInclude(NON_NULL)
 public class Environments {
-    private List<String> environments;
+    private List<Environment> environments;
 }
