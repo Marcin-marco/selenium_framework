@@ -1,6 +1,7 @@
 package testcases;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import pl.marcin.webdriver.configuration.EnvironmentsManager;
 import pl.marcin.webdriver.core.drivers.browserdriver.BrowserDriver;

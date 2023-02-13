@@ -6,6 +6,7 @@ public class LoginPage extends BasePage {
     private final By emailInput = By.cssSelector("input[data-qa='login-email']");
     private final By passwordInput = By.cssSelector("input[data-qa='login-password']");
     private final By submitBtn = By.cssSelector("button[data-qa='login-button']");
+    private final By alert = By.xpath("//p[contains(text(), 'Your email or password is incorrect!')]");
 
     public LoginPage loginToAccount(String email, String password) {
         typeEmail(email)
@@ -31,5 +32,9 @@ public class LoginPage extends BasePage {
         clickElement(submitBtn);
 
         return this;
+    }
+
+    public boolean isWrongCredentialsAlertDisplayed() {
+        return isElementVisible(alert);
     }
 }

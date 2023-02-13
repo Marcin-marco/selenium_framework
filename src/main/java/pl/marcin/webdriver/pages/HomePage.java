@@ -12,6 +12,12 @@ public class HomePage extends BasePage {
         return new LoginPage();
     }
 
+    public HomePage logoutFromAccount() {
+        clickElement(logoutBtn);
+
+        return this;
+    }
+
     public boolean isLogoutButtonDisplayed() {
         return isElementVisible(logoutBtn);
     }
