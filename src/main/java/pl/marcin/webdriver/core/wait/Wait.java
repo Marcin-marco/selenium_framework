@@ -1,5 +1,6 @@
 package pl.marcin.webdriver.core.wait;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,16 @@ public class Wait {
         try {
             return wait.ignoring(StaleElementReferenceException.class)
                     .until(ExpectedConditions.elementToBeClickable(element));
+        } catch (TimeoutException e) {
+            System.err.println("Time out while waiting for element to be clickable!");
+            throw e;
+        }
+    }
+
+    public WebElement forElementClickable(By by) {
+        try {
+            return wait.ignoring(StaleElementReferenceException.class)
+                    .until(ExpectedConditions.elementToBeClickable(by));
         } catch (TimeoutException e) {
             System.err.println("Time out while waiting for element to be clickable!");
             throw e;
