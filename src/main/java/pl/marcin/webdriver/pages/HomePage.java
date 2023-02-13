@@ -4,10 +4,15 @@ import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
     private final By signupBtn = By.xpath("//a[@href='/login']");
+    private final By logoutBtn = By.xpath("//a[@href='/logout']");
 
-    public HomePage goToSignupSection() {
+    public LoginPage goToSignupSection() {
         clickElement(signupBtn);
 
-        return this;
+        return new LoginPage();
+    }
+
+    public boolean isLogoutButtonDisplayed() {
+        return isElementVisible(logoutBtn);
     }
 }

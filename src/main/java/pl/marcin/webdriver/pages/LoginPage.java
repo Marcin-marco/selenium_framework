@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class LoginPage extends BasePage {
     private final By emailInput = By.cssSelector("input[data-qa='login-email']");
     private final By passwordInput = By.cssSelector("input[data-qa='login-password']");
-    private final By submitBtn = By.cssSelector("input[data-qa='login-button']");
+    private final By submitBtn = By.cssSelector("button[data-qa='login-button']");
 
     public LoginPage loginToAccount(String email, String password) {
         typeEmail(email)

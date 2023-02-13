@@ -39,4 +39,8 @@ public class Wait {
         }
     }
 
+    public WebElement forElementVisible(By by) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
 }

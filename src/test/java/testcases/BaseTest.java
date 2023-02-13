@@ -6,13 +6,19 @@ import pl.marcin.webdriver.configuration.EnvironmentsManager;
 import pl.marcin.webdriver.core.drivers.browserdriver.BrowserDriver;
 import pl.marcin.webdriver.core.drivers.driverprovider.DriverProvider;
 import pl.marcin.webdriver.pages.BasePage;
+import pl.marcin.webdriver.pages.HomePage;
+import pl.marcin.webdriver.pages.LoginPage;
 
 public class BaseTest extends BasePage {
     protected BrowserDriver driver;
+    protected HomePage homePage;
+    protected LoginPage loginPage;
 
     @BeforeClass
     public void warmUp() {
         driver = DriverProvider.getInstance();
+        homePage = new HomePage();
+        loginPage = new LoginPage();
         openHomePage();
     }
 

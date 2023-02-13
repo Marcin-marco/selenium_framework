@@ -20,11 +20,20 @@ public class BasePage {
 
     public void sendKeysToElement(By element, String value) {
         WebElement input = wait.forElementClickable(element);
-        input.sendKeys(value);
         input.clear();
+        input.sendKeys(value);
     }
 
     public String getPageTitle() {
         return driver.getTitle();
+    }
+
+    public boolean isElementVisible(By by) {
+        try {
+            wait.forElementVisible(by);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
