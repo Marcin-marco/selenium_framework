@@ -14,12 +14,12 @@ public class LoginTest extends BaseTest {
                 .goToSignupSection()
                 .loginToAccount(email, password);
         Assert.assertTrue(homePage.isLogoutButtonDisplayed());
+        homePage.logoutFromAccount();
     }
 
     @Test
     public void shouldNotLoginToAccount() {
         homePage
-                .logoutFromAccount()
                 .goToSignupSection()
                 .loginToAccount(WRONG_EMAIL, WRONG_PASSWORD);
         Assert.assertTrue(loginPage.isWrongCredentialsAlertDisplayed());

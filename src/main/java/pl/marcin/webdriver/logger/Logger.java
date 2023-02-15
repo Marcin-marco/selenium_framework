@@ -12,7 +12,7 @@ public class Logger {
 
     public static void addTestHeader(String testMethod) {
         String header = String.format("%d-[%s]-[%s]-[%s]",
-                testCounter++, Configuration.BROWSER.get(), Configuration.ENVIRONMENT, testMethod);
+                testCounter++, testMethod, Configuration.BROWSER.get(), Configuration.ENVIRONMENT);
         logTable.get().add(header);
     }
 
