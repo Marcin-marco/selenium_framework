@@ -1,7 +1,12 @@
 package pl.marcin.webdriver.listener;
 
+import org.testng.IAnnotationTransformer;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.ITestAnnotation;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 import static pl.marcin.webdriver.logger.LogType.TEST_FAILED;
 import static pl.marcin.webdriver.logger.LogType.TEST_SKIPPED;
@@ -11,7 +16,7 @@ import static pl.marcin.webdriver.logger.Logger.clearLogTable;
 import static pl.marcin.webdriver.logger.Logger.log;
 import static pl.marcin.webdriver.logger.Logger.printLogs;
 
-public class Listener implements ITestListener {
+public class Listener implements ITestListener, IAnnotationTransformer {
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -40,5 +45,13 @@ public class Listener implements ITestListener {
         log(TEST_SKIPPED, "Test " + result.getName() + " was skipped! Time lasted: " + timeSpent + " seconds");
         printLogs();
         clearLogTable();
+    }
+
+    @Override
+    public void transform(ITestAnnotation annotation,
+                          Class testClass,
+                          Constructor testConstructor,
+                          Method testMethod) {
+        annotation.setRetryAnalyzer(RetryFailedTest.class);
     }
 }
