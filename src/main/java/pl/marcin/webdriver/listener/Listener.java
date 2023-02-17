@@ -4,6 +4,8 @@ import org.testng.IAnnotationTransformer;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.ITestAnnotation;
+import pl.marcin.webdriver.core.drivers.browserdriver.BrowserDriver;
+import pl.marcin.webdriver.core.drivers.driverprovider.DriverProvider;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -35,6 +37,8 @@ public class Listener implements ITestListener, IAnnotationTransformer {
     public void onTestFailure(ITestResult result) {
         double timeSpent = (double) (result.getEndMillis() - result.getStartMillis()) / 1000;
         log(TEST_FAILED, "Test " + result.getName() + " was failed! Time lasted: " + timeSpent + " seconds");
+        BrowserDriver browserDriver = DriverProvider.getInstance();
+        browserDriver.takeScreenshot(result.getName());
         printLogs();
         clearLogTable();
     }
