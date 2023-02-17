@@ -11,7 +11,6 @@ public class NegativeLoginTest extends BaseTest {
     @Test
     public void shouldNotLoginToAccount() {
         homePage
-                .logoutFromAccount()
                 .goToSignupSection()
                 .loginToAccount(WRONG_EMAIL, WRONG_PASSWORD);
         Assert.assertTrue(loginPage.isWrongCredentialsAlertDisplayed());
