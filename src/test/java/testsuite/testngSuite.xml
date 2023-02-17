@@ -5,6 +5,7 @@
 <listeners>
     <listener class-name="pl.marcin.webdriver.listener.Listener"/>
 </listeners>
+
     <test name="Positive Login Tests">
         <classes>
             <class name="testcases.login.PositiveLoginTest"/>
