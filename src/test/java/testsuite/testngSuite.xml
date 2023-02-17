@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium Suite" parallel="classes" thread-count="1">
+<suite name="Selenium Suite" parallel="tests" thread-count="2">
 
 <listeners>
     <listener class-name="pl.marcin.webdriver.listener.Listener"/>
 </listeners>
-    <test name="Login Tests">
+    <test name="Positive Login Tests">
         <classes>
-            <class name="testcases.LoginTest"/>
+            <class name="testcases.login.PositiveLoginTest"/>
+        </classes>
+    </test>
+    <test name="Negative Login Tests">
+        <classes>
+            <class name="testcases.login.NegativeLoginTest"/>
         </classes>
     </test>
 </suite>

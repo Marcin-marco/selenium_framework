@@ -1,5 +1,6 @@
 package pl.marcin.webdriver.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static pl.marcin.webdriver.logger.LogType.INFO;
@@ -11,6 +12,7 @@ public class LoginPage extends BasePage {
     private final By submitBtn = By.cssSelector("button[data-qa='login-button']");
     private final By alert = By.xpath("//p[contains(text(), 'Your email or password is incorrect!')]");
 
+    @Step("Login to account.")
     public LoginPage loginToAccount(String email, String password) {
         typeEmail(email)
                 .typePassword(password)
