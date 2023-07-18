@@ -13,6 +13,7 @@ public class ChromeBrowser extends BrowserAbstract {
     public void setOptions() {
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--remote-allow-origins=*");
     }
 
     @Override
